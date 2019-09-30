@@ -5,4 +5,7 @@ from human_class import *
 class Veterinarian(Human):
     def __init__(self, specialisation, fname, lname, phone):
         super().__init__(fname, lname, phone)
-        self.specialisation = specialisation 
+        self.specialisation = specialisation
+
+    def fullname(self):
+        return self.fname + ' ' + self.lname
