@@ -17,21 +17,14 @@ appt2 = Appointment('Blocked nose', '7 October 2019', '£45', vet2)
 appt3 = Appointment('General check-up', '2 October 2019', '£30', vet3)
 
 # As a user I can add a pet to appointment
-booking1 = appt1.add_pet(pet1)
-booking2 = appt2.add_pet(pet4)
-booking3 = appt3.add_pet(pet3), appt3.add_pet(pet2)
+booking1 = appt1.add_pet(pet1), vet1
+booking2 = appt2.add_pet(pet4), vet2
+booking3 = appt3.add_pet(pet3), appt3.add_pet(pet2), vet3
 
 
 # As a user I can list all appointments (need to see what pet's are there)
-for pet in (booking1, booking2, booking3):
-    print(appt3.appointment_info())
-
-
-# As a user I can list all appointments (need to see what pet's are there)
-
-# As a user I can add a pet to appointment
-    # Create a method that allows us to add a pet using .append()
-
+for booking in (appt1, appt2, appt3):
+    print(booking.appointment_info())
 
 
 # As a user I can get pet details and owner details for a specific pet
