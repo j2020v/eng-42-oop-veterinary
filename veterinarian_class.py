@@ -7,3 +7,5 @@ class Veterinarian(Human):
         super().__init__(fname, lname, phone)
         self.specialisation = specialisation
 
+    def fullname(self):
+        return self.fname + ' ' + self.lname
