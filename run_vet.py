@@ -37,9 +37,10 @@ booking3 = appt3.add_pet(pet3)
 #     print(pet.pet_details())
 
 
-user_name = input('Welcome to Pet Petrol!')
-while True:
-    print('What can I help you with?')
+user_greeting = print('Welcome to Pet Petrol!')
+user_input = ''
+while user_input != 'exit':
+    print('What can I help you with today?')
     print('(1) What appointments are on this week?')
     print('(2) What are your specialties here?')
     print('(3) Book a pet')
@@ -48,19 +49,21 @@ while True:
         print(appt1.appointment_info())
         print(appt2.appointment_info())
         print(appt3.appointment_info())
-        break
-    if user_input == '2':
-        print(vet1.fullname(),'--', vet1.specialisation)
-        print(vet2.fullname(),'--',vet2.specialisation)
-        print(vet3.fullname(),'--', vet3.specialisation)
-        break
+
+    elif user_input == '2':
+        print(vet1.fullname() + '--'+ vet1.specialisation)
+        print(vet2.fullname() +'--' + vet2.specialisation)
+        print(vet3.fullname() +'--' + vet3.specialisation)
+
     elif user_input == '3':
-        owner_name = input('No problem, could I please have your full name?     ').strip()
-        pet_disease = input('Cute name! could I ask what you are booking for?')
+        owner_name = input('No problem, could I please have your full name?').strip().capitalize()
+        pet_name = input('What is the name of your pet?')
         pet_breed = input('What type of pet will you be bringing?')
-        new_pet_info = Pet(pet_name,pet_disease,pet_breed)
+        new_pet_info = Pet(owner_name,pet_name,pet_breed)
         pet_list.append(new_pet_info)
         for pet in pet_list:
             print('Owner:', pet.owner, '--',  'Pet name:', pet.name, '--', 'Type of pet:', pet.breed)
-
-
+    else:
+        print('Not sure what you mean...')
+else:
+    print('Thank you!')
